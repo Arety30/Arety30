@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Arety Chat — Gemini Demo</title>
+<style>
+:root{font-family:system-ui,sans-serif;color:#f7f8ff;background:#101425}*{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:grid;place-items:center;padding:1rem}
+main{width:min(780px,100%);background:#1a2038;border:1px solid #343d60;border-radius:20px;overflow:hidden;box-shadow:0 20px 70px #0005}
+header{padding:1.25rem 1.4rem;background:#252e50}h1{margin:0;font-size:1.35rem}header p{margin:.3rem 0 0;color:#c0c9ec}
+#messages{height:min(60vh,520px);min-height:280px;overflow:auto;padding:1rem;display:flex;flex-direction:column;gap:.8rem}
+.bubble{max-width:88%;padding:.8rem 1rem;border-radius:14px;white-space:pre-wrap;overflow-wrap:anywhere}
+.user{align-self:flex-end;background:#2c65dd}.bot{align-self:flex-start;background:#2a3352}
+form{display:flex;gap:.6rem;padding:1rem;border-top:1px solid #343d60}
+textarea{flex:1;resize:vertical;min-height:48px;max-height:140px;padding:.8rem;border-radius:10px;border:1px solid #485478;background:#11182c;color:inherit;font:inherit}
+button{border:0;border-radius:10px;background:#4b78f0;color:white;font:inherit;font-weight:700;padding:.7rem 1rem;cursor:pointer}button:disabled{opacity:.5;cursor:wait}
+#status{padding:0 1rem 1rem;color:#c0c9ec;font-size:.9rem}
+</style>
+</head>
+<body><main>
+<header><h1>✨ Arety Chat</h1><p>A small Gemini-powered chatbot demo</p></header>
+<div id="messages" aria-live="polite"><div class="bubble bot">Hey! Ask me something. 👋</div></div>
+<form id="form"><textarea id="message" maxlength="4000" placeholder="Write a message…" aria-label="Message" required></textarea><button id="send">Send</button></form>
+<div id="status" role="status">Deploy the serverless API before chatting.</div>
+</main>
+<script>
+const form=document.querySelector("#form"),input=document.querySelector("#message"),messages=document.querySelector("#messages"),status=document.querySelector("#status"),send=document.querySelector("#send");
+const history=[];
+function bubble(text,role){const el=document.createElement("div");el.className="bubble "+(role==="user"?"user":"bot");el.textContent=text;messages.append(el);messages.scrollTop=messages.scrollHeight;return el}
+form.addEventListener("submit",async event=>{
+ event.preventDefault();const message=input.value.trim();if(!message)return;
+ bubble(message,"user");input.value="";send.disabled=true;status.textContent="Thinking…";
+ const waiting=bubble("Thinking…","bot");
+ try{
+  const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message,history})});
+  const data=await response.json().catch(()=>({}));
+  if(!response.ok)throw new Error(data.error||"Request failed ("+response.status+").");
+  waiting.textContent=data.reply;
+  history.push({role:"user",text:message},{role:"model",text:data.reply});
+  while(history.length>12)history.shift();
+  status.textContent="Model: "+(data.model||"Gemini");
+ }catch(error){waiting.textContent="Sorry, I couldn't get a reply.";status.textContent=error.message||"Network error."}
+ finally{send.disabled=false;input.focus();messages.scrollTop=messages.scrollHeight}
+});
+input.addEventListener("keydown",event=>{if(event.key==="Enter"&&!event.shiftKey){event.preventDefault();form.requestSubmit()}});
+</script>
+</body></html>
