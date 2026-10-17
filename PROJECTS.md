@@ -28,6 +28,11 @@ These are organized for follow-up. Entries marked *history only* need their orig
 ### AI, cognition and ML
 - Arety RCB — architecture and documentation
 - RVTCB — Python/C++ cognitive-node experiment
+- Knowledge distillation pipeline — teacher-model knowledge organised into a node/sub-node/topic taxonomy; source and current status need audit
+- Arety Chat — public chat interface over RVTCB; several earlier model-fusion, voice, and camera experiments are mentioned in the profile README
+- Arety Voice API — speech recognition → model → speech synthesis pipeline; source/status needs audit
+- Abrar AI Hub — offline desktop app and CLI for agents, study tools, notes, knowledge graph, meetings, and plugins; source/status needs audit
+- laptop-agent — Discord bot coordinating local Ollama agents and automation; audit shell-command permissions and secrets before publication
 - RPTCB — physical-node concept; implementation status needs confirmation
 - Arety Chat / Arety AI chatbot — multiple prototypes and model integrations
 - Flask Gemini chatbot — history only; old model/API version needs updating
@@ -39,6 +44,10 @@ These are organized for follow-up. Entries marked *history only* need their orig
 - AI model experiments — Ollama, Qwen, Llama, Gemini and other model integrations; not one single repo
 
 ### Web apps, search and cloud
+- Arety Messenger — web chat plus Android wrapper; source/status needs audit
+- Arety fine-tuning request/download site — hosted on Raspberry Pi and published through a Worker/Funnel; audit deployment config before publishing
+- Arety MCP Gateway — service gateway for MCP integrations; audit connector credentials and endpoint config before publishing
+- MiniBank — FastAPI/SQLite local card/wallet prototype; keep real payment credentials and personal data private
 - Abrar Cloud / FamilyCloud — Flask file storage, accounts, trash and planned Drive integration
 - Arety API Gateway — custom OpenAI-compatible gateway; never commit API keys or customer request logs
 - Abrar Browser — Android browser prototype
@@ -52,6 +61,8 @@ These are organized for follow-up. Entries marked *history only* need their orig
 - Vite + React + TypeScript app experiments
 
 ### Hardware, embedded and offline computing
+- ESP32 Wi-Fi frame sniffer — NodeMCU-32S capture and Python 802.11 header decoder; audit capture data and confirm local regulations before sharing
+- Raspberry Pi 5 home server — llama.cpp inference API and audio/Bluetooth/VNC tooling; audit secrets and host configuration
 - Raspberry Pi 5 AI/offline server
 - Pi M.2 HAT and offline Wikipedia/search storage
 - ESP32 NodeMCU-32S communication and Wi-Fi experiments
@@ -63,6 +74,9 @@ These are organized for follow-up. Entries marked *history only* need their orig
 - Offline Kiwix, HTTrack and DocFetcher setup
 
 ### Networking, systems and infrastructure
+- Abrar OS / Dyverz OS — Arch-based distribution experiments, ISO builder, desktop styling engine, WinKernel layer, and first-boot wizard; source/status needs audit
+- Self-hosted email — Postfix/Dovecot, TLS submission relay, and dnsmasq private DNS; never publish private mail data, passwords, or server secrets
+- Arety phone-line/call server — speech-to-text, model inference, text-to-speech, SMS and softphone provisioning; source/status needs audit
 - WireGuard mesh VPN
 - Linux offline-client gateway / OTA proxy concept
 - Python/C++ JSON decision engine and code generator
@@ -76,6 +90,7 @@ These are organized for follow-up. Entries marked *history only* need their orig
 - Self-hosted email and domain infrastructure
 
 ### Games and other prototypes
+- Colab Gaming VM — QEMU VM booting inside Colab from repository-hosted disk assets; audit disk images and licensing before sharing
 - Roblox parkour/obby
 - Minecraft server
 - Gaming VM
