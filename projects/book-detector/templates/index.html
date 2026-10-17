@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Book Detector · Arety</title>
+<style>
+:root{font-family:system-ui,sans-serif;color:#182033;background:#f4f6fb}*{box-sizing:border-box}
+body{margin:0;padding:clamp(1rem,4vw,3rem)}main{max-width:900px;margin:auto}
+h1{font-size:clamp(2rem,5vw,3rem);margin:.1rem 0;letter-spacing:-.04em}
+.panel{background:white;border:1px solid #dce2ee;border-radius:16px;padding:1.2rem;margin:1rem 0;box-shadow:0 8px 25px #1b2d4a0b}
+button{background:#2457d6;color:white;border:0;border-radius:9px;padding:.75rem 1rem;font:inherit;cursor:pointer}
+input{display:block;margin:1rem 0;max-width:100%}.error{background:#fff0f0;border:1px solid #f4baba;padding:.8rem;border-radius:8px}
+img{display:block;max-width:100%;height:auto;border-radius:10px}.muted{color:#667085}.row{display:flex;flex-wrap:wrap;gap:1rem}.row>div{flex:1;min-width:240px}
+li{margin:.45rem 0;overflow-wrap:anywhere}
+</style>
+</head>
+<body><main>
+<p class="muted">ARETY · COMPUTER VISION EXPERIMENT</p><h1>📚 Book Detector</h1>
+<p class="muted">A local Flask prototype combining YOLO object detection and EasyOCR text recognition.</p>
+<section class="panel">
+<form action="/detect" method="post" enctype="multipart/form-data">
+<label for="image"><strong>Choose a book/photo image</strong></label>
+<input id="image" name="image" type="file" accept="image/png,image/jpeg,image/webp" required>
+<button type="submit">Detect books & read text</button>
+<p class="muted">PNG, JPG or WEBP · maximum 10 MB. The image is processed by your local server.</p>
+</form>
+{% if error %}<p class="error" role="alert">{{ error }}</p>{% endif %}
+</section>
+{% if preview %}
+<section class="panel"><h2>Detection preview</h2><img src="{{ preview }}" alt="Image preview with detected books marked">
+<p><strong>{{ book_count }}</strong> book object(s) detected.</p>
+{% if detections %}<ul>{% for item in detections %}<li>Book · confidence {{ "%.1f"|format(item.confidence * 100) }}%</li>{% endfor %}</ul>{% endif %}
+<p class="muted">{{ note }}</p></section>
+<section class="panel"><h2>Text found by OCR</h2>
+{% if recognized_text %}<ul>{% for item in recognized_text %}<li>{{ item.text }} <span class="muted">({{ "%.0f"|format(item.confidence * 100) }}%)</span></li>{% endfor %}</ul>
+{% else %}<p>No readable text was detected in this image.</p>{% endif %}
+</section>
+{% endif %}
+</main></body></html>
