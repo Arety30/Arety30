@@ -6,6 +6,8 @@ Student developer from Qatar building **Arety** — a self-hosted platform of se
 
 - **[Full project inventory](PROJECTS.md)** — organized by AI, web apps, hardware, networking, infrastructure, and games, with source/publication status.
 - **[PDF Text Extractor](projects/pdf-text-extractor/)** — a small, browser-only PDF text extraction tool.
+- **[TurboWarp Gemini Chatbot](projects/turbowarp-gemini-chatbot/)** — Gemini chat demo with a server-side API proxy.
+- **[Book Detector](projects/book-detector/)** — Flask + YOLO + OCR computer-vision prototype.
 - **[Arety RCB docs](https://github.com/Arety30/Arety-rcb)** · **[GPU Box](https://github.com/Arety30/gpu-box)**
 
 The inventory distinguishes code already in GitHub from remembered prototypes that still need source recovery or a security review.
