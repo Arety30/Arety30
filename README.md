@@ -40,9 +40,26 @@ The inventory distinguishes code already in GitHub from remembered prototypes th
 - **ESP32 Wi-Fi sniffer** — NodeMCU-32S frame capture with my own Python 802.11 header decoder.
 - **Raspberry Pi 5 home server** — llama.cpp inference server (Ollama-compatible API) hosting my personal model, plus audio, Bluetooth and VNC tooling.
 
+## More projects
+
+- **AbrarCloud / Arety Cloud** — modular FastAPI personal-cloud backend: image parser, audio generator and parser, database editor, user-file storage.
+- **Project Sovereign** — fully offline agentic system for 1–3B-parameter models: chain-of-thought loops, self-reflection, structured planning; FastAPI backend + frontend, 20-phase blueprint.
+- **Arety Office** — offline browser office suite (Quill, x-spreadsheet) reading and writing real files via pandoc, LibreOffice and openpyxl.
+- **Gemma 4 Studio** — offline web UI for a 4B multimodal model with native vision + audio through a llama.cpp server, plus Piper speech synthesis.
+- **Defender Bot & security assessments** — dependency-free authorization-boundary defense engine (HTTP event correlation, proportionate responses, incident records) and multi-round security findings reports.
+- **Discord bot family** — AbrarAssistant, ai_assistant, shell_executor, SystemControlBot, a reusable scaffold, and Discord Browser VM: a per-server Chromium browser running as an embedded Discord Activity.
+- **chatgpt-compvm** — disposable Ubuntu desktop in Docker (Firefox, terminal, noVNC) remote-controlled through an MCP server over Tailscale.
+- **apt-store** — desktop app-store client in Next.js + Electron. **Meeting and Study Room Hub** — Electron desktop app.
+- **Full-Screen Chat** — Firefox extension with its own FastAPI backend.
+- **abrar-twin** — my personal fine-tuned model (dataset + Colab notebook), served from the Raspberry Pi 5 through my llama.cpp server; custom Ollama Modelfiles.
+- **projectonebeta** — early speech-to-text, audio generation and Asterisk ARI telephony prototypes, the roots of the Arety voice stack. **Arety Phone Space** — Gradio Space packaging the phone call server.
+- **Images & packaging** — custom Ubuntu 26.04 arm64 ISO remastered with Cubic; Debian packaging (.deb).
+- **Pi networking** — pi-mesh WireGuard/tailnet gateway and pi-desktop one-click remote desktop.
+- **Smaller tools** — Video Stream Portal, routing-table service, chemistry quiz web app + CLI quiz runner, DuckDNS updater, RAM-gated mail relay, Cloudflare Worker gateway, a 3D-printed pod case design, and earlier HC-12 radio / Raspberry Pi serial-communication experiments.
+
 ## Stack
 
-C++ · Python (FastAPI, Flask, CustomTkinter, MCP SDK) · Linux (systemd, Apache, Postfix/Dovecot, dnsmasq, archiso, Wine) · Docker · Tailscale · Cloudflare Tunnels & Workers · Android · ESP32 · fine-tuning and distillation on free GPU tiers
+C++ · Python (FastAPI, Flask, CustomTkinter, MCP SDK, Gradio, Streamlit) · TypeScript (Next.js, Electron) · Firefox extensions · Linux (systemd, Apache, Postfix/Dovecot, dnsmasq, archiso, Wine) · Docker · Tailscale · Cloudflare Tunnels & Workers · Android · ESP32 · Asterisk/SIP · WireGuard · fine-tuning and distillation on free GPU tiers
 
 ## Milestones
 
