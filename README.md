@@ -2,6 +2,14 @@
 
 Student developer from Qatar building **Arety** — a self-hosted platform of services and tools under [arety.cloud](https://tests.arety.cloud), plus my own Linux distribution. Everything here is designed, written and operated by me, running on free compute tiers and hardware I own.
 
+## Portfolio map
+
+- **[Full project inventory](PROJECTS.md)** — organized by AI, web apps, hardware, networking, infrastructure, and games, with source/publication status.
+- **[PDF Text Extractor](projects/pdf-text-extractor/)** — a small, browser-only PDF text extraction tool.
+- **[Arety RCB docs](https://github.com/Arety30/Arety-rcb)** · **[GPU Box](https://github.com/Arety30/gpu-box)**
+
+The inventory distinguishes code already in GitHub from remembered prototypes that still need source recovery or a security review.
+
 ## Arety
 
 | Project | What it is |
