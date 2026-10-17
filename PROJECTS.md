@@ -17,7 +17,9 @@ This index separates code that is already in GitHub from projects remembered fro
 
 ## New code in this repository
 
-- **[PDF Text Extractor](projects/pdf-text-extractor/)** — standalone HTML app for extracting/searching/downloading selectable PDF text. It is a fresh implementation of a remembered project idea, not recovered byte-for-byte source.
+- **[PDF Text Extractor](projects/pdf-text-extractor/)** — standalone HTML app for extracting/searching/downloading selectable PDF text. Fresh rebuild, not recovered byte-for-byte source.
+- **[TurboWarp Gemini Chatbot](projects/turbowarp-gemini-chatbot/)** — chat UI plus server-side Gemini API proxy; the key stays in a server environment variable. Fresh rebuild.
+- **[Book Detector](projects/book-detector/)** — Flask prototype combining YOLO book-object detection with EasyOCR. Fresh rebuild.
 
 ## Project ideas and prototypes from development history
 
@@ -29,8 +31,8 @@ These are organized for follow-up. Entries marked *history only* need their orig
 - RPTCB — physical-node concept; implementation status needs confirmation
 - Arety Chat / Arety AI chatbot — multiple prototypes and model integrations
 - Flask Gemini chatbot — history only; old model/API version needs updating
-- TurboWarp Gemini chatbot — history only; backend must keep API keys in environment variables
-- Book Detector — Flask, YOLO/Ultralytics, OpenCV, EasyOCR
+- TurboWarp Gemini chatbot — prototype code now in this repository; backend must keep API keys in environment variables
+- Book Detector — Flask, YOLO/Ultralytics, OpenCV, EasyOCR; prototype code now in this repository
 - AI code generator — Python/C++/JSON generation experiments
 - Knowledge distillation pipeline — remembered workflow; source/status needs audit
 - Knowledge Graph — repo exists but was empty at last inspection
